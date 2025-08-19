@@ -25,7 +25,7 @@ public class GestorTareas {
 
     public void listarTareas(){
         for(int i = 0; i < listaTareas.size(); i++) {
-            System.out.println(listaTareas.get(i).getDescripcion());
+            System.out.println(i + ": " + listaTareas.get(i));
         }
     }
 

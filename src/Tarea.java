@@ -30,4 +30,9 @@ public class Tarea {
         this.estado = estado; 
 
     }
+
+    @Override 
+    public String toString (){
+        return "Descripcion: " + this.descripcion + ", Estado: " + this.estado; 
+    }
 }
