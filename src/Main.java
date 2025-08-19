@@ -14,9 +14,22 @@ Extra (para puntos adicionales):
 Permitir que el usuario guarde las tareas en un archivo de texto y las cargue al iniciar el programa.
 */
 
-public class gestion_tareas {
+public class Main{
 
     public static void main(String[] args) {
-        System.out.println("hola");
+        GestorTareas gestor = new GestorTareas(); 
+        Tarea nuevTarea = new Tarea("test", false);
+        Tarea nuevTarea2 = new Tarea("test2", false);
+        Tarea nuevTarea3 = new Tarea("test3", false);
+        Tarea nuevTarea4 = new Tarea("test4", false);
+
+        gestor.agregarTarea(nuevTarea);
+        gestor.agregarTarea(nuevTarea2);
+        gestor.agregarTarea(nuevTarea3);
+        gestor.agregarTarea(nuevTarea4);
+        gestor.listarTareas();
+        gestor.eliminarTarea(2);
+        gestor.listarTareas();
+
     }
 }
