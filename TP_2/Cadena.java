@@ -13,8 +13,13 @@ public class Cadena {
         return this.texto; 
     }
 
-    public static String inversor (String c){
-
-        return c; 
+    public static String inversor(String c){
+        if (c == null || c.length()<=1) {
+            return c; 
+        }
+           //El método charAt(int índice) de la clase String
+           // devuelve el carácter que está en la posición indicada dentro de la cadena.
+            return inversor(c.substring(1)) + c.charAt(0);
+       
     }
 }
