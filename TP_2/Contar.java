@@ -11,6 +11,6 @@ public class Contar {
         int prueba = 123456; 
         System.out.println("Cifras totales: " + contador(prueba));
 
-        funciona ver por que no funnicona cuanod saco el main de esta parte
+        
     }*/
 }
