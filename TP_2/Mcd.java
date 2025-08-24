@@ -3,5 +3,11 @@ Implemente de manera recursiva el algoritmo de Euclides para calcular el MCD de 
 Ejemplo: MCD(48, 18) = 6. */
 
 public class Mcd {
-    
+   public static int buscar (int a, int b){
+     if (b == 0) { 
+            return a; // Caso base
+        } else {
+            return buscar(b, a % b); // Paso recursivo
+        }
+   } 
 }

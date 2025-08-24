@@ -14,12 +14,17 @@ public class Main{
         int total;
         double prom;
         //------------------------------------
-         
+
+        //-------------Promedio: prueba con nums hardcodeado--------------
+        int num1 = 48;
+        int num2 = 18;
+        int resultado;
+        //---------------------------------
 
         do{
             System.out.println("MENU:Para salir ingrese 0\n1)Contador de cifras");
-            System.out.println("\n2)Invertir cadena\n");
-            System.out.println("3)Suma de elementos de un arreglo + promedio\n4)");
+            System.out.println("2)Invertir cadena\n");
+            System.out.println("3)Suma de elementos de un arreglo + promedio\n4)Maximo comun divisor");
 
             opcion = teclado.nextInt();  
             
@@ -62,9 +67,15 @@ public class Main{
                     System.out.println("Promedio de los elementos: " + prom);
 
                     System.out.println("\n");
+
                     break; 
 
                 case 4: 
+                    System.out.println("MCD");
+                    resultado = Mcd.buscar(num1, num2); 
+                    System.out.println("El MCD entre los numeros " + num1 + " y " + num2 + " es: "+ resultado);
+
+                    System.out.println("\n");
 
                     break;
                     
