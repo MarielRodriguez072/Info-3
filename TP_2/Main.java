@@ -25,7 +25,10 @@ public class Main{
         //----------------fibo-------------
         int cantidad;
         long [] memo;
-        //----------------------------
+        //---------------8-------------
+        int [] arreglo = {3, 5, 7, 9, 1, 8};
+        boolean x;
+        //
         do{
             System.out.println("***********MENU: Para salir ingrese 0***********\n");
             System.out.println("1)Contador de cifras\n2)Invertir cadena");
@@ -126,11 +129,18 @@ public class Main{
                     memo = new long[cantidad + 1];
 
                     Arrays.fill(memo, -1);
-                    System.out.println("Serie con: "+ cantidad+ "es: " + Fibonacci.fib(cantidad,memo));
+                    System.out.println("Serie de Fibonacci de: "+ cantidad+ " es =" + Fibonacci.fib(cantidad,memo));
                     break;
                 
                 case 8:
-                System.out.println("Buscar en un arreglo");
+                    System.out.println("Buscar en un arreglo");
+                    teclado.nextLine();
+
+                    System.out.println("Ingrese el numero a buscar");
+                    cantidad = teclado.nextInt();
+                    x = Buscar.look(arreglo, cantidad);
+
+                    System.out.println("¿El numero "+ cantidad + " está en el arreglo? " + x);
 
                     break;
                 default:
