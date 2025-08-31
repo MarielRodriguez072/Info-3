@@ -23,12 +23,13 @@ public class Main{
         int binario; 
 
         do{
-            System.out.println("MENU:Para salir ingrese 0\n1)Contador de cifras");
+            System.out.println("***********MENU:Para salir ingrese 0***********\n1)Contador de cifras");
             System.out.println("2)Invertir cadena");
             System.out.println("3)Suma de elementos de un arreglo + promedio\n4)Maximo comun divisor");
-            System.out.println("5)Conversion binaria\n6) ");
+            System.out.println("5)Conversion binaria\n6)Palindromo ");
 
-            opcion = teclado.nextInt();  
+            opcion = teclado.nextInt(); 
+            
             
             switch (opcion) {
                 case 0:
@@ -100,11 +101,21 @@ public class Main{
                     break;
                     
                 case 6:
-                    System.out.println("Palindromo");
+                    System.out.println("Palindromo:\n");
+                    teclado.nextLine(); 
+
+                    System.out.println("Ingrese una palabra para determinar si es palíndroma:\n");
+                    cadena = teclado.nextLine();
+                    System.out.println("La palabra, " + cadena +": " + Palindromo.verifico(cadena)+ "\n");
+
+                    System.out.println("\n");
+
+
+
                     break; 
                     
                 default:
-                    System.out.println("ingrese otra opcion");
+                    System.out.println("Ingrese otra opcion:");
 
                     break;
             }
