@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main{
@@ -21,12 +22,16 @@ public class Main{
         int resultado;
         //---------------------------------
         int binario; 
-
+        //----------------fibo-------------
+        int cantidad;
+        long [] memo;
+        //----------------------------
         do{
-            System.out.println("***********MENU:Para salir ingrese 0***********\n1)Contador de cifras");
-            System.out.println("2)Invertir cadena");
+            System.out.println("***********MENU: Para salir ingrese 0***********\n");
+            System.out.println("1)Contador de cifras\n2)Invertir cadena");
             System.out.println("3)Suma de elementos de un arreglo + promedio\n4)Maximo comun divisor");
-            System.out.println("5)Conversion binaria\n6)Palindromo ");
+            System.out.println("5)Conversion binaria\n6)Palindromo");
+            System.out.println("7)Fibonacci optimizado\n8)Buscar en un arreglo");
 
             opcion = teclado.nextInt(); 
             
@@ -110,10 +115,24 @@ public class Main{
 
                     System.out.println("\n");
 
-
-
                     break; 
-                    
+                
+                case 7:
+                    System.out.println("Fibonacci");
+                    teclado.nextLine();
+
+                    System.out.println("Ingrese la cantidad de elementos que quiere en la serie");
+                    cantidad = teclado.nextInt();
+                    memo = new long[cantidad + 1];
+
+                    Arrays.fill(memo, -1);
+                    System.out.println("Serie con: "+ cantidad+ "es: " + Fibonacci.fib(cantidad,memo));
+                    break;
+                
+                case 8:
+                System.out.println("Buscar en un arreglo");
+
+                    break;
                 default:
                     System.out.println("Ingrese otra opcion:");
 
