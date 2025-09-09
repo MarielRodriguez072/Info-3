@@ -29,7 +29,18 @@ public class PilaArreglo {
     }
 
     public int top(){   //metodo para consultar el elemento superior de la pila
-
+        if(isEmpty()){
+            System.out.println("La pila está vacía");
+        }else{
+            return pila[base];
+        }
     }
-    
+
+    //metodos para controlar el contenido de la pila
+    public boolean isEmpty(){
+        return base == -1;
+    }
+    public boolean isFull(){
+        return base == capacidad -1;
+    }
 }
