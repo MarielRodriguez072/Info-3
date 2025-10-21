@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-
+        
         int opcion;
         do { 
             System.out.println("Menu MONTICULO BINARIO: 0-Salir");
