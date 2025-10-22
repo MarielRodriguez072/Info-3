@@ -51,7 +51,13 @@ public class BinaryHeap<T extends Comparable<T>> {/*Permite que el heap funcione
     public List<T> getElementos() {
         return new ArrayList<>(heap); //retorna una copia de los elementos del montículo
     }
-    
+    public void mostrarMonticulo(){
+        if(isEmpty()){
+            System.out.println("El montículo está vacío.");
+            return;
+        }
+       // mostrarMonticulo(0 , "", true);
+    }
     //*************************************
     private boolean comparar(T padre, T hijo){
         int comp = hijo.compareTo(padre);
