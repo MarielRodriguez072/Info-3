@@ -11,7 +11,9 @@ public class BinaryHeap<T extends Comparable<T>> {/*Permite que el heap funcione
         this.heap = new ArrayList<>();
         this.isMaxHeap = isMaxHeap; //indica si es un heap máximo o mínimo
     }
-
+    public boolean isEmpty() {
+        return heap.isEmpty();
+    }
     public void insert(T value) {
         if (value == null) {
             System.out.println("No se puede insertar un valor nulo en el montículo.");
@@ -21,6 +23,36 @@ public class BinaryHeap<T extends Comparable<T>> {/*Permite que el heap funcione
         }
     }
 
+    public T remove() {
+        if (isEmpty()) {
+            System.out.println("El montículo está vacío");
+            return null;
+        }
+        T root = heap.get(0); //guarda la raiz
+        T lastElement = heap.remove(heap.size() - 1); //elimina el ultimo elemento
+        if (!isEmpty()) {
+            heap.set(0, lastElement); //coloca el ultimo elemento en la raiz
+            //heapifyDown(0); //reorganiza el montículo
+        }
+        return root; //retorna la raiz eliminada
+    }   
+
+    public T cresta() {
+        if (isEmpty()) {
+            System.out.println("El montículo está vacío.");
+            return null;
+        }
+        return heap.get(0); //retorna la raiz
+    }
+
+    public int size() {
+        return heap.size(); //retorna el tamaño del montículo
+    }
+    public List<T> getElementos() {
+        return new ArrayList<>(heap); //retorna una copia de los elementos del montículo
+    }
+    
+    //*************************************
     private boolean comparar(T padre, T hijo){
         int comp = hijo.compareTo(padre);
         if (isMaxHeap) {
