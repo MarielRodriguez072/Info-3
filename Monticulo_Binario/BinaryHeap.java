@@ -51,19 +51,35 @@ public class BinaryHeap<T extends Comparable<T>> {/*Permite que el heap funcione
     public List<T> getElementos() {
         return new ArrayList<>(heap); //retorna una copia de los elementos del montículo
     }
+    //Mostar montículo
     public void mostrarMonticulo(){
         if(isEmpty()){
             System.out.println("El montículo está vacío.");
             return;
 
         } else{
-            System.out.print("Elementos del montículo: ");
-            for (T x : heap) {
+            System.out.print("Elementos del montículo:\n");
+            /*for (T x : heap) {
                 System.out.print( x + ", ");
                 
-            }
+            }*/
+            mostrarMonticulo(0, "", true);
         }
 
+    }
+    //Sobrecarga de métodos---Solucion profe
+    private void mostrarMonticulo(int index, String prefix, boolean isTail) {
+        if (index < heap.size()) {
+            System.out.println(prefix + (isTail ? "└── " : "├── ") + heap.get(index));
+            int leftChild = 2 * index + 1;
+            int rightChild = 2 * index + 2;
+            if (leftChild < heap.size()) {
+                mostrarMonticulo(leftChild, prefix + (isTail ? "    " : "│   "), rightChild >= heap.size());
+            }
+            if (rightChild < heap.size()) {
+                mostrarMonticulo(rightChild, prefix + (isTail ? "    " : "│   "), true);
+            }
+        }
     }
     //*************************************
     private boolean comparar(T padre, T hijo){
