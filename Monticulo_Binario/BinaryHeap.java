@@ -22,6 +22,17 @@ public class BinaryHeap<T extends Comparable<T>> {/*Permite que el heap funcione
             heapifyUp(heap.size() - 1); //lo acomoda hacia arriba
         }
     }
+    //para que acepte con arreglo
+    public void insertArray(T[] array){
+        for (T value : array) {
+            if(value == null){
+                System.out.println("No se puede insertar un valor nulo en el montículo");
+            }else{
+                insert(value); //inserta cada elemento del arreglo
+            }
+        }
+        heapifyUp(heap.size() - 1); //reorganiza el montículo
+     }
 
     public T removeRoot() {
         if (isEmpty()) {

@@ -8,7 +8,7 @@ public class Main {
         do { 
             System.out.println("Menú MONTICULO BINARIO: 0-Salir\n1)Crear monticulo (máximo o mínimo)");
             System.out.print("2)Insertar elemento\n3)Eliminar elemento raíz\n4)Ver raíz(la cima del montículo)\n5)Mostrar elementos del montículo");
-            System.out.print("\n6)Tamaño del montículo\n7)Está vacío?\n");
+            System.out.print("\n6)Tamaño del montículo\n7)Está vacío?\n8)Insertar arreglo\n");
             opcion = teclado.nextInt();
 
             switch (opcion) {
@@ -65,7 +65,13 @@ public class Main {
                     System.out.println("¿El montículo está vacío? " + heap.isEmpty());
                  System.out.println("\n");
                     break;
-
+                
+                case 8:
+                    Integer[] arr = {9, 4, 7, 1, 6, 2};
+                    heap.insertArray(arr);
+                    heap.mostrarMonticulo();
+                    System.out.println("\n");
+                    break;
                 default:
                     System.out.println("Opcion no valida");
                     break;
