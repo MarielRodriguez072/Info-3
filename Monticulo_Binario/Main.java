@@ -72,6 +72,7 @@ public class Main {
                     heap.mostrarMonticulo();
                     System.out.println("\n");
                     break;
+                
                 default:
                     System.out.println("Opcion no valida");
                     break;
