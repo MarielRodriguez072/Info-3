@@ -8,7 +8,7 @@ public class Main {
         do { 
             System.out.println("Menú MONTICULO BINARIO: 0-Salir\n1)Crear monticulo (máximo o mínimo)");
             System.out.print("2)Insertar elemento\n3)Eliminar elemento raíz\n4)Ver raíz(la cima del montículo)\n5)Mostrar elementos del montículo");
-            System.out.print("\n6)Ver con jerarquía\n7)Tamaño del montículo\n8)Está vacío? ");
+            System.out.print("\n6)Ver con jerarquía\n7)Tamaño del montículo\n8)Está vacío?\n");
             opcion = teclado.nextInt();
 
             switch (opcion) {
@@ -16,7 +16,7 @@ public class Main {
                     System.out.println("Saliendo...");
                     break;
                 case 1:
-                    System.out.println("Elija un tipo de montículo: 1) Máximo 2) Mínimo");
+                    System.out.println("Elija un tipo de montículo: 1)Mínimo 2) Máximo");
                     tipoHeap = teclado.nextInt();
                     if (tipoHeap == 1){
                         heap = new BinaryHeap<>(true);
@@ -26,16 +26,31 @@ public class Main {
                         System.out.println("Opción no válida. Se creará un montículo máximo por defecto.");
                         heap = new BinaryHeap<>(true);
                     }
-
+                    System.out.println("\n");
                     break;
 
                 case 2:
+                    System.out.print("Ingrese el elemento a insertar: ");
+                    int elemento = teclado.nextInt();
+                    if (heap != null) {
+                        heap.insert(elemento);
+                    } else {
+                        System.out.println("Primero debe crear un montículo.");
+                    }
+                    System.out.println("\n");
                     break;
+
                 case 3:
                     break;
+
                 case 4:
+                    System.out.println("La raíz del montículo es: " + heap.cresta());
+                    System.out.println("\n");
                     break;
+
                 case 5: 
+                    heap.mostrarMonticulo();
+                    System.out.println("\n");
                     break;
                 case 6:     
                     break;
