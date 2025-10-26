@@ -23,7 +23,7 @@ public class BinaryHeap<T extends Comparable<T>> {/*Permite que el heap funcione
         }
     }
 
-    public T remove() {
+    public T removeRoot() {
         if (isEmpty()) {
             System.out.println("El montículo está vacío");
             return null;
@@ -32,7 +32,7 @@ public class BinaryHeap<T extends Comparable<T>> {/*Permite que el heap funcione
         T lastElement = heap.remove(heap.size() - 1); //elimina el ultimo elemento
         if (!isEmpty()) {
             heap.set(0, lastElement); //coloca el ultimo elemento en la raiz
-            //heapifyDown(0); //reorganiza el montículo
+            heapifyDown(0); //reorganiza el montículo
         }
         return root; //retorna la raiz eliminada
     }   
@@ -69,9 +69,9 @@ public class BinaryHeap<T extends Comparable<T>> {/*Permite que el heap funcione
     private boolean comparar(T padre, T hijo){
         int comp = hijo.compareTo(padre);
         if (isMaxHeap) {
-            return comp > 0; //heap máximo
+            return comp < 0; //heap máximo
         } else {
-            return comp < 0; //heap mínimo
+            return comp > 0; //heap mínimo
         }
     }
 
@@ -87,6 +87,23 @@ public class BinaryHeap<T extends Comparable<T>> {/*Permite que el heap funcione
         if(comparar(heap.get(index),heap.get(indexPadre))) {
             intercambiar(index,indexPadre);
             heapifyUp(indexPadre); //llamada recursiva
+        }
+    }
+
+    private void heapifyDown(int index) {
+        int leftChild = 2 * index + 1;
+        int rightChild = 2 * index + 2;
+        int target = index;
+
+        if (leftChild < heap.size() && comparar(heap.get(leftChild), heap.get(target))) {
+            target = leftChild;
+        }
+        if (rightChild < heap.size() && comparar(heap.get(rightChild), heap.get(target))) {
+            target = rightChild;
+        }
+        if (target != index) {
+            intercambiar(index, target);
+            heapifyDown(target);
         }
     }
 
