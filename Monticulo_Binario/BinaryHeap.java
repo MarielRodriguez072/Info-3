@@ -116,7 +116,7 @@ public class BinaryHeap<T extends Comparable<T>> {/*Permite que el heap funcione
             heapifyUp(indexPadre); //llamada recursiva
         }
     }
-
+    
     private void heapifyDown(int index) {
         int leftChild = 2 * index + 1;
         int rightChild = 2 * index + 2;
