@@ -1,7 +1,7 @@
 import java.time.LocalDateTime;
 
 public class Turno {
-    private String id; 
+    private final String id; 
     private String dniPaciente;
     private String matriculaMedico;
     private LocalDateTime fechaHora;
@@ -36,9 +36,24 @@ public class Turno {
         return motivo; 
     }
 
+    public LocalDateTime getFin() {
+        return fechaHora.plusMinutes(duracionMin);
+    }
+
+    public void actualizarFecha(LocalDateTime nuevaFecha) {
+        this.fechaHora = nuevaFecha;
+    }
+
+    public void actualizarDuracion(int nuevaDuracion) {
+        this.duracionMin = nuevaDuracion;
+    }
+
+    public void actualizarMotivo(String nuevoMotivo) {
+        this.motivo = nuevoMotivo;
+    }
+
     @Override
     public String toString() {
         return "Turno{" + id + ", paciente: " + dniPaciente +", medico: " + matriculaMedico +", fecha: " + fechaHora + ", duracion: " + duracionMin + " min, motivo: " + motivo + "}";
     }
 }
-
